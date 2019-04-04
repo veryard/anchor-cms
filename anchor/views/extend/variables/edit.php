@@ -3,10 +3,13 @@
 <hgroup class="wrap">
 	<h1><?php echo __('extend.editing_variable', $variable->user_key); ?></h1>
 </hgroup>
+    <div class="row wrap">
+    <div class="side">
+        <?php require(__DIR__.'/../sidebar.php');
+        extendSidebar('variables');?>
+    </div>
 
-<section class="wrap">
-	
-
+    <div class="pagecontent">
 	<form method="post" action="<?php echo Uri::to('admin/extend/variables/edit/' . $variable->key); ?>" novalidate>
 
 		<input name="token" type="hidden" value="<?php echo $token; ?>">
@@ -35,6 +38,7 @@
                 __('global.delete'), array('class' => 'btn delete red')); ?>
 		</aside>
 	</form>
-</section>
+</div>
+    </div>
 
 <?php echo $footer; ?>

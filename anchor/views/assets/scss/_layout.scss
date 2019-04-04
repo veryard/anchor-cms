@@ -24,7 +24,7 @@ body {
 
 .wrap,
 .profile {
-  width:    960px;
+  width:    1100px;
   margin:   0 auto;
   overflow: hidden;
 }
@@ -51,4 +51,38 @@ fieldset {
 ul {
   margin:  0;
   padding: 0;
+}
+
+.row {
+  display: flex;
+
+  .side {
+    width: 25%;
+  }
+
+  .pagecontent {
+    width: 75%;
+    background: #FFF;
+    padding: 16px;
+    border-radius: 4px;
+  }
+}
+
+.side {
+  .list {
+    border-top: 0;
+    margin-top: 5px;
+  }
+  li {
+    &.active {
+      a {
+        background-color: $color-white!important;
+        border-radius: 3px 0px 0px 3px;
+      }
+    }
+
+    a {
+      border-bottom: 0!important;
+    }
+  }
 }

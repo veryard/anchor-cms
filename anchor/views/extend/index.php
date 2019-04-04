@@ -5,7 +5,6 @@
 </hgroup>
 
 <section class="wrap">
-	
 
 	<ul class="list">
 		<li>

@@ -4,9 +4,13 @@
 	<h1><?php echo __('metadata.metadata'); ?></h1>
 </hgroup>
 
-<section class="wrap">
-	
+<div class="row wrap">
+    <div class="side">
+        <?php require(__DIR__.'/../sidebar.php');
+        extendSidebar('settings');?>
+    </div>
 
+    <div class="pagecontent">
 	<form method="post" action="<?php echo Uri::to('admin/extend/metadata'); ?>" novalidate>
 
 		<input name="token" type="hidden" value="<?php echo $token; ?>">
@@ -116,7 +120,9 @@
 			<?php echo Html::link('admin/extend', __('global.cancel'), array('class' => 'btn cancel blue')); ?>
 		</aside>
 	</form>
-</section>
+
+    </div>
+</div>
 
 <script type="text/javascript">
 

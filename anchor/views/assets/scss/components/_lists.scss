@@ -19,15 +19,19 @@
       position:      relative;
       overflow:      hidden;
       display:       block;
-      padding:       25px 30px 15px;
+      padding:       12px 14px;
       border-bottom: 1px solid $color-geyser;
       color:         $color-slate-gray;
 
-      &:hover {
+      &:hover{
         background: $color-light-solitude;
       }
     }
-
+    &.active {
+      a {
+        background: $color-light-solitude;
+      }
+    }
     strong {
       position:      relative;
       overflow:      hidden;
@@ -36,7 +40,7 @@
       height:        25px;
       white-space:   nowrap;
       text-overflow: ellipsis;
-      font-size:     19px;
+      font-size:     15px;
       color:         $color-shuttle-gray;
 
       .status {
@@ -49,7 +53,6 @@
 
       & + span {
         display:        block;
-        padding-bottom: 8px;
         font-size:      13px;
         color:          $color-hit-gray;
       }
@@ -57,7 +60,6 @@
 
     p {
       display:       none;
-      margin-bottom: 10px;
 
       @include breakpoint($breakpoint-small) {
         display: block;

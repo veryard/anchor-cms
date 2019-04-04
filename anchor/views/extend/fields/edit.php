@@ -3,10 +3,13 @@
 <hgroup class="wrap">
 	<h1><?php echo __('extend.editing_custom_field', $field->label); ?></h1>
 </hgroup>
+<div class="row wrap">
+    <div class="side">
+        <?php require(__DIR__.'/../sidebar.php');
+        extendSidebar('customfields');?>
+    </div>
 
-<section class="wrap">
-	
-
+    <div class="pagecontent">
 	<form method="post" action="<?php echo Uri::to('admin/extend/fields/edit/' . $field->id); ?>" novalidate>
 
 		<input name="token" type="hidden" value="<?php echo $token; ?>">
@@ -94,8 +97,8 @@
 
 		</aside>
 	</form>
-</section>
-
+</div>
+    </div>
 <script src="<?php echo asset('anchor/views/assets/js/custom-fields.js'); ?>"></script>
 
 <?php echo $footer; ?>

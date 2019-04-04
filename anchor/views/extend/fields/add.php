@@ -4,9 +4,13 @@
 	<h1><?php echo __('extend.create_field'); ?></h1>
 </hgroup>
 
-<section class="wrap">
-	
+<div class="row wrap">
+    <div class="side">
+        <?php require(__DIR__.'/../sidebar.php');
+        extendSidebar('customfields');?>
+    </div>
 
+    <div class="pagecontent">
 	<form method="post" action="<?php echo Uri::to('admin/extend/fields/add'); ?>" novalidate>
 
 		<input name="token" type="hidden" value="<?php echo $token; ?>">
@@ -77,7 +81,8 @@
 			<?php echo Html::link('admin/extend/fields', __('global.cancel'), array('class' => 'btn cancel blue')); ?>
 		</aside>
 	</form>
-</section>
+    </div>
+</div>
 
 <script src="<?php echo asset('anchor/views/assets/js/custom-fields.js'); ?>"></script>
 

@@ -231,12 +231,7 @@ Route::post('admin/upgrade', array('before' => 'auth', 'main' => function() {
     List extend
 */
 Route::get('admin/extend', array('before' => 'auth', 'main' => function ($page = 1) {
-    
-    $vars['token'] = Csrf::token();
-
-    return View::create('extend/index', $vars)
-        ->partial('header', 'partials/header')
-        ->partial('footer', 'partials/footer');
+    return Response::redirect(Uri::to('admin/extend/pagetypes'));
 }));
 
 Route::post('admin/get_fields', array('before' => 'auth', 'main' => function () {

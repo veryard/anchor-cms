@@ -3,10 +3,13 @@
 <hgroup class="wrap">
 	<h1><?php echo __('extend.create_variable'); ?></h1>
 </hgroup>
+    <div class="row wrap">
+    <div class="side">
+        <?php require(__DIR__.'/../sidebar.php');
+        extendSidebar('variables');?>
+    </div>
 
-<section class="wrap">
-	
-
+    <div class="pagecontent">
 	<form method="post" action="<?php echo Uri::to('admin/extend/variables/add'); ?>" novalidate>
 
 		<input name="token" type="hidden" value="<?php echo $token; ?>">
@@ -31,6 +34,7 @@
 			<?php echo Html::link('admin/extend/variables', __('global.cancel'), array('class' => 'btn cancel blue')); ?>
 		</aside>
 	</form>
-</section>
+    </div>
+    </div>
 
 <?php echo $footer; ?>

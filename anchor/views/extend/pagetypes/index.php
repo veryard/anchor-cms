@@ -8,25 +8,30 @@
 	</nav>
 </hgroup>
 
-<section class="wrap">
-	
+<div class="row wrap">
+    <div class="side">
+        <?php require(__DIR__.'/../sidebar.php');
+        extendSidebar('pagetypes');?>
+    </div>
 
-	<?php if (count($pagetypes) >= 1): ?>
-	<ul class="list">
-		<?php foreach ($pagetypes as $type): ?>
-		<li>
-			<a href="<?php echo Uri::to('admin/extend/pagetypes/edit/' . $type->key); ?>">
-				<strong><?php echo e($type->value); ?></strong>
-				<p><?php echo $type->key; ?></p>
-			</a>
-		</li>
-		<?php endforeach; ?>
-	</ul>
-	<?php else: ?>
-	<p class="empty">
-		<span class="icon"></span> <?php echo __('extend.notypes_desc'); ?>
-	</p>
-	<?php endif; ?>
-</section>
+    <div class="pagecontent">
+        <?php if (count($pagetypes) >= 1): ?>
+            <ul class="list">
+                <?php foreach ($pagetypes as $type): ?>
+                    <li>
+                        <a href="<?php echo Uri::to('admin/extend/pagetypes/edit/' . $type->key); ?>">
+                            <strong><?php echo e($type->value); ?></strong>
+                            <p><?php echo $type->key; ?></p>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <p class="empty">
+                <span class="icon"></span> <?php echo __('extend.notypes_desc'); ?>
+            </p>
+        <?php endif; ?>
+    </div>
+</div>
 
 <?php echo $footer; ?>

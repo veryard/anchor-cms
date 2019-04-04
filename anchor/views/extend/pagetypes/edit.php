@@ -4,8 +4,14 @@
 	<h1><?php echo __('extend.editing_pagetype', $pagetype->key); ?></h1>
 </hgroup>
 
-<section class="wrap">
-	
+
+    <div class="row wrap">
+    <div class="side">
+        <?php require(__DIR__.'/../sidebar.php');
+        extendSidebar('pagetypes');?>
+    </div>
+
+    <div class="pagecontent">
 
 	<form method="post" action="<?php echo Uri::to('admin/extend/pagetypes/edit/' . $pagetype->key); ?>" novalidate>
 
@@ -36,6 +42,7 @@
 			<?php endif; ?>
 		</aside>
 	</form>
-</section>
+    </div>
+    </div>
 
 <?php echo $footer; ?>
