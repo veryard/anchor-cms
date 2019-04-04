@@ -50,9 +50,10 @@
     <fieldset class="main">
         <div class="wrap">
             <?php echo Form::textarea('markdown', Input::previous('markdown', $page->markdown), array(
-                'placeholder' => __('pages.content_explain'),
-                'id'            => 'editor'
+                'placeholder' => __('pages.content_explain')
             )); ?>
+
+            <?php echo $editor; ?>
         </div>
     </fieldset>
 
@@ -111,11 +112,10 @@
 <script src="<?php echo asset('anchor/views/assets/js/upload-fields.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/text-resize.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/editor.js'); ?>"></script>
-<script src="<?php echo asset('anchor/views/assets/js/simplemde.js');?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/change-saver.js'); ?>"></script>
 <script src="<?php echo asset('anchor/views/assets/js/autosave.js'); ?>"></script>
 <script>
-    var smdEditor = new SimpleMDE({element: document.getElementById("editor")});
+    $('textarea[name=markdown]').editor();
     $('#pagetype').on('change', function() {
         var $this = $(this);
         $.post("<?php echo Uri::to('admin/get_fields'); ?>", {
